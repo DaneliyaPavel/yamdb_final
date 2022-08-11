@@ -6,30 +6,20 @@ from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
 from rest_framework.generics import GenericAPIView
 from rest_framework.pagination import LimitOffsetPagination
-from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
+from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
-
-from reviews.models import Category, Genre, Title, Review
+from reviews.models import Category, Genre, Review, Title
 from users.emails import send_confirmation_code_via_email
 from users.models import User
+
 from .filters import TitleFilter
 from .mixins import CreateListDestroyViewSet
-from .permissions import (
-    AdminOrReadOnly,
-    AdminOrUserOrModeratorOrReadOnly
-)
-from .serializers import (
-    CategorySerializer,
-    GenreSerializer,
-    TitleReadSerializer,
-    TitleWriteSerializer,
-    ReviewSerializer,
-    CommentSerializer,
-    UserSerializer,
-    SignUpSerializer,
-    VerificationSerializer,
-    CheckMeSerializer
-)
+from .permissions import AdminOrReadOnly, AdminOrUserOrModeratorOrReadOnly
+from .serializers import (CategorySerializer, CheckMeSerializer,
+                          CommentSerializer, GenreSerializer, ReviewSerializer,
+                          SignUpSerializer, TitleReadSerializer,
+                          TitleWriteSerializer, UserSerializer,
+                          VerificationSerializer)
 
 
 class SignUpAPIView(GenericAPIView):
@@ -85,6 +75,8 @@ class UserViewSet(viewsets.ModelViewSet):
             serializer.is_valid(raise_exception=True)
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return request
 
 
 class CategoryViewSet(CreateListDestroyViewSet):

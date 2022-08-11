@@ -1,12 +1,9 @@
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework import serializers
-from rest_framework.validators import UniqueTogetherValidator
-from rest_framework.validators import UniqueValidator
-
-from reviews.models import Category, Genre, Title, Comment, Review
-from users.models import ADMIN, ME
-from users.models import User
+from rest_framework.validators import UniqueTogetherValidator, UniqueValidator
+from reviews.models import Category, Comment, Genre, Review, Title
+from users.models import ADMIN, ME, User
 
 
 class SignUpSerializer(serializers.ModelSerializer):
@@ -146,6 +143,7 @@ class ReviewSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError('У вас уже есть отзыв!')
         return data
 
+    @staticmethod
     def validate_rating(value):
         if 1 > value > 10:
             raise serializers.ValidationError(

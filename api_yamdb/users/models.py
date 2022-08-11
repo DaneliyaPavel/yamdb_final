@@ -1,8 +1,9 @@
+from typing import List, Tuple
+
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.db import models
 from django.db.models import CharField, EmailField, TextField
-from typing import Tuple, List
 
 ADMIN: str = 'admin'
 MODERATOR: str = 'moderator'
