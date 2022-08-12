@@ -72,6 +72,9 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             echo SECRET=${{ secrets.SECRET }} >> .env
             sudo docker-compose up -d
+            sudo docker-compose exec -T web python manage.py migrate
+            sudo docker-compose exec -T web python manage.py collectstatic --noinput 
+            
 
 
   send_message:
