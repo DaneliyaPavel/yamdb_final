@@ -160,7 +160,7 @@ python manage.py loaddata dump.json
 
 Main branch status
 
-![main](https://github.com/DaneliyaPavel/yamdb_final/workflows/yamdb_worflow/badge.svg)
+![main](https://github.com/DaneliyaPavel/yamdb_final/workflows/yamdb_final/badge.svg)
 
 ##Адрес развёрнутого проекта
 
