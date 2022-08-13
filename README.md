@@ -157,7 +157,10 @@ python manage.py loaddata dump.json
 Откройте свой проект в браузере и убедитесь в этом.**
 
 ##Workflow
-![example workflow](https://github.com/DaneliyaPavel/yamdb_final/actions/workflows/yamdb_workflow/badge.svg)
+
+Main branch status
+
+![main](https://github.com/DaneliyaPavel/yamdb_final/workflows/After_review/badge.svg)
 
 ##Адрес развёрнутого проекта
 
