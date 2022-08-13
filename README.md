@@ -156,13 +156,13 @@ python manage.py loaddata dump.json
 **Готово. Теперь все данные перенесены на сервер и доступны посетителям вашего проекта.
 Откройте свой проект в браузере и убедитесь в этом.**
 
-##Workflow
+## Workflow
 
 Main branch status
 
 ![main](https://github.com/DaneliyaPavel/yamdb_final/workflows/yamdb_final/badge.svg)
 
-##Адрес развёрнутого проекта
+## Адрес развёрнутого проекта
 
 Теперь проект доступен по адресу http://62.84.117.196/.
 
