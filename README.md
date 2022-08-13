@@ -159,6 +159,12 @@ python manage.py loaddata dump.json
 ##Workflow
 ![example workflow](https://github.com/DaneliyaPavel/yamdb_final/actions/workflows/yamdb_workflow/badge.svg)
 
+##Адрес развёрнутого проекта
+
+Теперь проект доступен по адресу http://62.84.117.196/.
+
+Зайдите на http://62.84.117.196/admin/ и убедитесь,
+что страница отображается полностью: статика подгрузилась;
 
 ## Авторы
 
